@@ -1,7 +1,7 @@
 "use strict";
 let employee = {
   employeeId: 1,
-  name: "Jake",
+  name: "Jake DeFalco",
   jobTitle: "Application Developer",
   payRate: 38.59,
 };
