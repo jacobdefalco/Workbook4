@@ -11,4 +11,5 @@ function getAverage(scores) {
 }
 
 console.log(`My average test score: ${getAverage(myScores).toFixed(2)}%`);
+console.log(`==============AND=============`);
 console.log(`Your average test score: ${getAverage(yourScores).toFixed(2)}%`);
