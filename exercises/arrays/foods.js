@@ -6,12 +6,12 @@ let lunchItems = [
 ];
 
 function getTotal(meal) {
-  let subtotal = 0;
+  let sum = 0;
   for (let i = 0; i < meal.length; i++) {
     let item = meal[i];
-    subtotal += item.price;
+    sum += item.price;
   }
-  return subtotal;
+  return sum;
 }
 
 let subtotal = getTotal(lunchItems);
