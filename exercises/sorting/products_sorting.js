@@ -16,9 +16,7 @@ console.log(products);
 
 console.log(`=======Products Sorted by prodID=====`);
 products.sort(function (a, b) {
-  if (a.prodId < b.prodId) return -1;
-  else if (a.prodId == b.prodId) return 0;
-  else return 1;
+  return a.prodId - b.prodId;
 });
 console.log(products);
 
