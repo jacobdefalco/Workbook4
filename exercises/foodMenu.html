@@ -25,8 +25,8 @@
     <footer></footer>
     <script>
       "use strict";
-      let mealDDL = document.querySelector("#meal-categories");
-      let itemDisplay = document.querySelector("#menu-items");
+      let mealDDL = document.querySelector("#meal-categories"); //grabbing the drop down menu and assigning it a variable
+      let itemDisplay = document.querySelector("#menu-items"); //grabbing the list box and assigning it a variable
 
       let menu = {
         drinks: [
@@ -35,7 +35,7 @@
           "Sweet Tea",
           "Coke",
           "Dr. Pepper",
-          "Budweiser",
+          "Hi-C Fruit Punch",
         ],
         entrees: [
           "Hamburger w/ Fries",
@@ -56,24 +56,28 @@
       };
 
       function loadMenuItems() {
-        switch (mealDDL.value) {
+        //checking what the value of the DDL is
+        itemDisplay.innerHTML = ""; //starting it out as blank
+        switch (
+          mealDDL.value //the conditions of the value
+        ) {
           case "drinks":
-            displayMenuItems(menu.drinks);
+            displayMenuItems(menu.drinks); //if value is "drinks", run displayMenuItems() w the drinks parameter
             break; //exit switch
           case "entrees":
-            displayMenuItems(menu.entrees);
+            displayMenuItems(menu.entrees); //if value is "entrees", run displayMenuItems() w the entrees parameter
             break; //exit switch
           case "desserts":
-            displayMenuItems(menu.desserts);
+            displayMenuItems(menu.desserts); //if value is "desserts", run displayMenuItems() w the desserts parameter
             break; //exit switch
         }
       }
 
       function displayMenuItems(itemArray) {
-        itemDisplay.innerHTML = "";
         for (const item of itemArray) {
-          const menuOption = new Option(item);
-          itemDisplay.appendChild(menuOption);
+          //go through the array, pulling individual items and giving it a variable
+          const menuOption = new Option(item); //create a new option with that variable
+          itemDisplay.appendChild(menuOption); //display that new option in the list box
         }
       }
     </script>
