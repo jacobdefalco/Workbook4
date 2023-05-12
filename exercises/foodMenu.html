@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
+  </head>
+  <body>
+    <header></header>
+    <main class="container">
+      <select id="meal-categories" onchange="loadMenuItems()">
+        <option value="">Select Menu Category...</option>
+        <option value="drinks">Drinks</option>
+        <option value="entrees">Entrees</option>
+        <option value="desserts">Desserts</option>
+      </select>
+      <h2>Menu Items</h2>
+      <select id="menu-items" size="6"></select>
+    </main>
+    <footer></footer>
+    <script>
+      "use strict";
+      let mealDDL = document.querySelector("#meal-categories");
+      let itemDisplay = document.querySelector("#menu-items");
+
+      let menu = {
+        drinks: [
+          "Water",
+          "Tea",
+          "Sweet Tea",
+          "Coke",
+          "Dr. Pepper",
+          "Budweiser",
+        ],
+        entrees: [
+          "Hamburger w/ Fries",
+          "Grilled Cheese w/ Tater Tots",
+          "Grilled Chicken w/ Veggies",
+          "Chicken Fried Steak w/ Mashed Potatoes",
+          "Fried Shrimp w/ Coleslaw",
+          "Veggie Plate",
+        ],
+        desserts: [
+          "Cheesecake",
+          "Chocolate Cake",
+          "Snickerdoodle Cookie",
+          "Strawberry Shortcake",
+          "Chocolate Chip Cookies",
+          "Tiramasu",
+        ],
+      };
+
+      function loadMenuItems() {
+        switch (mealDDL.value) {
+          case "drinks":
+            displayMenuItems(menu.drinks);
+            break; //exit switch
+          case "entrees":
+            displayMenuItems(menu.entrees);
+            break; //exit switch
+          case "desserts":
+            displayMenuItems(menu.desserts);
+            break; //exit switch
+        }
+      }
+
+      function displayMenuItems(itemArray) {
+        itemDisplay.innerHTML = "";
+        for (const item of itemArray) {
+          const menuOption = new Option(item);
+          itemDisplay.appendChild(menuOption);
+        }
+      }
+    </script>
+  </body>
+</html>
